@@ -9,11 +9,15 @@ type menuMobileProps = {
 
 const MenuMobile = ({ isMenuOpen, setIsMenuOpen }: menuMobileProps) => {
   return (
-    <div className="absolute z-50 top-0 left-0 w-full h-full bg-white px-20 pt-16">
+    <div
+      className={`fixed z-50 top-0 w-2/3 ${
+        !isMenuOpen ? "-left-full" : "left-0 transition-transform duration-300"
+      } h-full bg-white px-20 pt-16 shadow-2xl`}
+    >
       <nav className="flex flex-col gap-16 relative">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="absolute right-0 bg-gray-50 px-4 p-2 rounded-full text-white hover:bg-gray-90"
+          className="absolute -right-10 bg-gray-50 px-4 p-2 rounded-full text-white hover:bg-gray-90"
         >
           X
         </button>
