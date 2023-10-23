@@ -4,10 +4,19 @@ import Link from "next/link";
 import { NAV_LINKS } from "@/constants";
 import Button from "./Button";
 import MenuMobile from "./MenuMobile";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
       <header className="flexBetween max-container padding-container relative z-10 py-5">
