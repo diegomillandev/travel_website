@@ -9,7 +9,7 @@ type menuMobileProps = {
 
 const MenuMobile = ({ isMenuOpen, setIsMenuOpen }: menuMobileProps) => {
   return (
-    <div className="absolute z-50 top-0 left-0 w-full h-screen bg-white px-20 pt-16">
+    <div className="absolute z-50 top-0 left-0 w-full h-full bg-white px-20 pt-16">
       <nav className="flex flex-col gap-16 relative">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
