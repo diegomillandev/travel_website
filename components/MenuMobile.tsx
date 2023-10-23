@@ -10,18 +10,18 @@ type menuMobileProps = {
 const MenuMobile = ({ isMenuOpen, setIsMenuOpen }: menuMobileProps) => {
   return (
     <div
-      className={`fixed z-50 top-0 w-2/3 ${
+      className={`fixed z-50 top-0 w-2/3 sm:w-3/6 md:w-1/3 ${
         !isMenuOpen ? "-left-full" : "left-0 transition-transform duration-300"
-      } h-full bg-white px-1 pt-8 shadow-2xl`}
+      } h-full bg-white px-3 pt-8 shadow-2xl`}
     >
       <nav className="flex flex-col gap-4 relative">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="absolute right-3 bg-gray-50 px-4 p-2 rounded-full text-white hover:bg-gray-90"
+          className="absolute right-2 bg-gray-50 px-4 p-2 rounded-full text-white hover:bg-gray-90"
         >
           X
         </button>
-        <ul className="flex flex-col h-full mt-16 gap-8">
+        <ul className="flex flex-col h-full mt-16 gap-8 mb-6">
           {NAV_LINKS.map((link) => (
             <li
               key={link.key}
@@ -31,14 +31,12 @@ const MenuMobile = ({ isMenuOpen, setIsMenuOpen }: menuMobileProps) => {
             </li>
           ))}
         </ul>
-        <div className="flex justify-center mt-2">
-          <Button
-            type="button"
-            title={"Login"}
-            icon={"/user.svg"}
-            variant={"btn_dark_green"}
-          />
-        </div>
+        <Button
+          type="button"
+          title={"Login"}
+          icon={"/user.svg"}
+          variant={"btn_dark_green"}
+        />
       </nav>
     </div>
   );
