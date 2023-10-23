@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NAV_LINKS } from "@/constants";
 import Button from "./Button";
 import MenuMobile from "./MenuMobile";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
